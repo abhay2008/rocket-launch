@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="move.js"></script>
+  <script src="zoom.js"></script>
+  <script src="fall.js"></script>
+</head>
+
+<body>
+
+  <a-scene background="color:#000000">
+
+    <a-camera position="0 -10 0" zoom>
+    </a-camera>
+    <a-entity id="rocket" position="1 2.5 5" move>
+      <a-cone id="part1" radius-top="0.1" radius-bottom="0.5" position="0 2 0" color="#fae22d"></a-cone>
+      <a-cylinder id="part2" position="0 0 0" radius="0.5" height="3" color="#fc5f17"></a-cylinder>
+      <a-cylinder fall id="part3" position="0 -2 0" radius="0.5" height="1.2" color="#fc3517">
+        <a-triangle id="fin1" position="-0.1 0.1 -0.9" rotation="0 0 270" scale="0.5 0.5 1" vertex-a="1 1 1" vertex-b="1 3 1" vertex-c="-1 1 1" color="#fc173d"></a-triangle>
+        <a-triangle id="fin2" position="-0.9 -0.94 -0.9" scale="0.5 0.5 1" vertex-a="1 1 1" vertex-b="1 3 1" vertex-c="-1 1 1" color="#fc173d"></a-triangle>
+      </a-cylinder>
+    </a-entity>
+    <a-entity position="0 0 0" rotation="0 0 0" animation="property: rotation; to: 0 360 0; easing: linear; loop: true; dur: 600000">
+      <a-sphere position="0 -10 10" radius="10" src="https://cdn.glitch.me/850dd813-e5e9-4dd0-9751-38981ae74172%2Fearth.jpg" ></a-sphere>
+    </a-entity>
+  </a-scene>
+</body>
+</html>
